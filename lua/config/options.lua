@@ -20,7 +20,7 @@ vim.opt.formatoptions:append({ "r" })
 
 vim.g.ai_cmp = false
 vim.g.snacks_animate = false
-vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_picker = "fzf"
 
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
@@ -35,11 +35,3 @@ end
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
-
--- Neovide (if installed)
-if vim.g.neovide then
-  vim.o.guifont = "Hack Nerd Font:h11"
-  vim.g.neovide_hide_mouse_when_typing = true
-  vim.g.neovide_cursor_vfx_mode = "railgun"
-  -- vim.g.neovide_transparency = 0.7
-end

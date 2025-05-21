@@ -125,10 +125,28 @@ ______    _
       table.remove(opts.dashboard.preset.keys, 7)
       if LazyVim.has("telescope-file-browser.nvim") then
         table.insert(opts.dashboard.preset.keys, 2, {
-          icon = "󰥨 ",
+          icon = "󰥩 ",
           key = "b",
           desc = "File Browser",
           action = ":Telescope file_browser",
+        })
+        table.insert(opts.dashboard.preset.keys, 7, {
+          icon = "󰆧 ",
+          key = "p",
+          desc = "Plugin",
+          action = function()
+            require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+          end,
+        })
+      end
+      if LazyVim.has("fzf-lua") then
+        table.insert(opts.dashboard.preset.keys, 6, {
+          icon = "󰆧 ",
+          key = "p",
+          desc = "Plugin",
+          action = function()
+            require("fzf-lua").files({ cwd = require("lazy.core.config").options.root })
+          end,
         })
       end
     end,
