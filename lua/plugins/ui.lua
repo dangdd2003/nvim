@@ -47,14 +47,14 @@ return {
           if require("tokyonight.config").options.transparent then
             return apply_bg(c.bg_highlight)
           end
-        elseif (vim.g.colors_name or ""):find("rose-pine") then
+        elseif (vim.g.colors_name or ""):find("rose%-pine") then
           return require("rose-pine.plugins.bufferline")
         elseif (vim.g.colors_name or ""):find("catppuccin") then
           local c = require("catppuccin.palettes").get_palette()
           if require("catppuccin").options.transparent_background then
             return apply_bg(c.base)
           end
-        elseif (vim.g.colors_name or ""):find("solarized-osaka") then
+        elseif (vim.g.colors_name or ""):find("solarized%-osaka") then
           local c = require("solarized-osaka.colors").setup()
           if require("solarized-osaka.config").options.transparent then
             return apply_bg(c.base03)
@@ -113,14 +113,14 @@ return {
     "folke/snacks.nvim",
     opts = function(_, opts)
       opts.dashboard.preset.header = [[
-______    _                                       
-|  _  \  | |                                     Z
-| | | |__| | __ _ _ __   __ ___      __      Z    
-| | | / _` |/ _` | '_ \ / _` \ \ /\ / /   z       
-| |/ / (_| | (_| | | | | (_| |\ V  V /  z         
-|___/ \__,_|\__,_|_| |_|\__, | \_/\_/             
-                         __/ |                    
-                        |___/                     
+  _____      _                            
+ |  __ \    | |                           
+ | |  | | __| | __ _ _ __   __ ___      __
+ | |  | |/ _` |/ _` | '_ \ / _` \ \ /\ / /
+ | |__| | (_| | (_| | | | | (_| |\ V  V / 
+ |_____/ \__,_|\__,_|_| |_|\__, | \_/\_/  
+                            __/ |         
+                           |___/          
           ]]
       table.remove(opts.dashboard.preset.keys, 7)
       if LazyVim.has("telescope-file-browser.nvim") then
@@ -206,7 +206,7 @@ ______    _
             InclineNormalNC = { guibg = c.surface1, guifg = c.lavender },
           },
         }
-      elseif (vim.g.colors_name or ""):find("solarized-osaka") then
+      elseif (vim.g.colors_name or ""):find("solarized%-osaka") then
         local c = require("solarized-osaka.colors").setup()
         highlight = {
           groups = {
@@ -269,7 +269,7 @@ ______    _
             { get_diagnostic_label() },
             { (ft_icon or "") .. " ", guifg = ft_color, guibg = "none" },
             { filename .. " ", gui = modified },
-            { "┊  " .. vim.api.nvim_win_get_number(props.win), group = "DevIconWindows" },
+            { "┊  " .. vim.api.nvim_win_get_number(props.win), group = "DevIconWindows" },
           }
           return buffer
         end,

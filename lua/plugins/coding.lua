@@ -29,8 +29,8 @@ return {
       },
     },
     opts = {
-      model = "claude-3.7-sonnet-thought",
-      temparature = 0.5,
+      model = "claude-3.7-sonnet",
+      temperature = 0.5,
     },
   },
 
