@@ -41,7 +41,7 @@ elseif colorscheme == "catppuccin" then
       name = "catppuccin",
       opts = {
         flavour = "macchiato",
-        transparent_background = false,
+        transparent_background = true,
         term_colors = true,
         integrations = {
           nvim_surround = true,
@@ -56,6 +56,9 @@ elseif colorscheme == "catppuccin" then
             TelescopePromptBorder = { fg = c.flamingo },
             TelescoperesultsBorder = { fg = c.pink },
             TelescopePreviewBorder = { fg = c.sapphire },
+            FzfLuaTitle = { fg = c.base, bg = c.yellow },
+            FzfLuaTtitePromptBorder = { fg = c.flamingo },
+            FzfLuaPreviewBorder = { fg = c.sapphire },
           }
         end,
       },
@@ -68,7 +71,7 @@ elseif colorscheme == "solarized-osaka" then
       "craftzdog/solarized-osaka.nvim",
       priority = 1000,
       opts = {
-        transparent = false,
+        transparent = true,
         styles = {
           sidebars = "transparent",
           floats = "transparent",
@@ -76,6 +79,9 @@ elseif colorscheme == "solarized-osaka" then
         on_highlights = function(hl, c)
           hl.TelescopeBorder = hl.FloatBorder
           hl.TelescopeTitle = { fg = c.base04, bg = c.green }
+          hl.FzfLuaBorder = hl.FloatBorder
+          hl.FzfLuaTitle = { fg = c.base04, bg = c.green }
+          hl.FzfLuaPreviewTitle = { fg = c.base04, bg = c.cyan300 }
         end,
       },
     },
