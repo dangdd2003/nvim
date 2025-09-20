@@ -178,7 +178,7 @@ return {
 
   -- mason
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ui = {
         icons = {

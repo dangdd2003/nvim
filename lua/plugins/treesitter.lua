@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     -- mdx as markdown
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter.config").setup(opts)
 
       vim.filetype.add({
         extension = {

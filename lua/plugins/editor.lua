@@ -19,7 +19,7 @@ return {
 
   -- color highlighter
   {
-    "echasnovski/mini.hipatterns",
+    "nvim-mini/mini.hipatterns",
     optional = true,
     event = "BufReadPre",
     opts = {
