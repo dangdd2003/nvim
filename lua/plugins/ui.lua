@@ -52,12 +52,12 @@ return {
         elseif (vim.g.colors_name or ""):find("catppuccin") then
           local c = require("catppuccin.palettes").get_palette()
           if require("catppuccin").options.transparent_background then
-            return apply_bg(c.base)
+            return apply_bg(c.overlay2)
           end
         elseif (vim.g.colors_name or ""):find("solarized%-osaka") then
           local c = require("solarized-osaka.colors").setup()
           if require("solarized-osaka.config").options.transparent then
-            return apply_bg(c.base03)
+            return apply_bg(c.violet700)
           end
         end
       end,
@@ -122,8 +122,8 @@ return {
                             __/ |         
                            |___/          
           ]]
-      table.remove(opts.dashboard.preset.keys, 7)
       if LazyVim.has("telescope-file-browser.nvim") then
+        table.remove(opts.dashboard.preset.keys, 7)
         table.insert(opts.dashboard.preset.keys, 2, {
           icon = "󰥩 ",
           key = "b",
@@ -140,6 +140,7 @@ return {
         })
       end
       if LazyVim.has("fzf-lua") then
+        table.remove(opts.dashboard.preset.keys, 7)
         table.insert(opts.dashboard.preset.keys, 6, {
           icon = "󰆧 ",
           key = "p",

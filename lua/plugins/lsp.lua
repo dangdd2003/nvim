@@ -158,12 +158,16 @@ return {
   -- lsp keymaps
   {
     "neovim/nvim-lspconfig",
-    opts = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "<c-k>", mode = "i", false }
-      keys[#keys + 1] =
-        { "<c-d>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" }
-    end,
+    opts = {
+      servers = {
+        ["*"] = {
+          keys = {
+            { "<c-k>", mode = "i", false },
+            { "<c-d>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
+          },
+        },
+      },
+    },
   },
 
   -- auto stop lsp

@@ -20,7 +20,6 @@ vim.opt.formatoptions:append({ "r" })
 
 vim.g.ai_cmp = false
 vim.g.snacks_animate = false
-vim.g.lazyvim_picker = "fzf"
 
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0

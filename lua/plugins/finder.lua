@@ -6,14 +6,14 @@ return {
     dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
     keys = {
       {
-        "<leader>fp",
+        "<leader>sP",
         function()
           require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
         end,
         desc = "Find Plugin File",
       },
       {
-        "fp",
+        "fP",
         function()
           require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
         end,
@@ -137,11 +137,31 @@ return {
     optional = true,
     keys = {
       {
-        "<leader>fp",
+        "<leader>sP",
         function()
           require("fzf-lua").files({ cwd = require("lazy.core.config").options.root })
         end,
         desc = "Find Plugin File",
+      },
+    },
+  },
+
+  -- Snacks
+  {
+    "snacks.nvim",
+    optional = true,
+    keys = {
+      {
+        "<leader>sP",
+        function()
+          Snacks.picker.files({
+            dirs = { vim.fn.stdpath("data") .. "/lazy" },
+            title = "Find Plugin Files",
+            hidden = true,
+            follow = true,
+          })
+        end,
+        desc = "Find Plugin Files",
       },
     },
   },
