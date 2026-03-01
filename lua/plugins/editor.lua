@@ -109,21 +109,52 @@ return {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        keymaps = {
-          normal = "gs",
-          normal_cur = "gsa",
-          normal_line = "gS",
-          normal_cur_line = "gSA",
-          visual = "gsa",
-          visual_line = "gSA",
-          delete = "gsd",
-          change = "gsc",
-          change_line = "gSC",
-        },
-      })
-    end,
+    keys = {
+      {
+        "gs",
+        "<Plug>(nvim-surround-normal)",
+        mode = "n",
+        desc = "Add a surrounding pair around a motion (normal mode)",
+      },
+      {
+        "gss",
+        "<Plug>(nvim-surround-normal-cur)",
+        mode = "n",
+        desc = "Add a surrounding pair around the current line (normal mode)",
+      },
+      {
+        "gS",
+        "<Plug>(nvim-surround-normal-line)",
+        mode = "n",
+        desc = "Add a surrounding pair around a motion, on new lines (normal mode)",
+      },
+      {
+        "gSS",
+        "<Plug>(nvim-surround-normal-cur-line)",
+        mode = "n",
+        desc = "Add a surrounding pair around the current line, on new lines (normal mode)",
+      },
+      {
+        "gs",
+        "<Plug>(nvim-surround-visual)",
+        mode = "x",
+        desc = "Add a surrounding pair around a visual selection (visual mode)",
+      },
+      {
+        "gS",
+        "<Plug>(nvim-surround-visual-line)",
+        mode = "x",
+        desc = "Add a surrounding pair around a visual selection, on new lines (visual mode)",
+      },
+      { "gsd", "<Plug>(nvim-surround-delete)", mode = { "n" }, desc = "Delete a surrounding pair" },
+      { "gsc", "<Plug>(nvim-surround-change)", mode = { "n" }, desc = "Change a surrounding pair" },
+      {
+        "gSC",
+        "<Plug>(nvim-surround-change-line)",
+        mode = { "n" },
+        desc = "Change a surrounding pair, putting replacements on new lines",
+      },
+    },
   },
 
   -- markdown rendering

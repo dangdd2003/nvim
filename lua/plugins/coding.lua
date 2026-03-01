@@ -18,6 +18,7 @@ return {
 
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    optional = true,
     keys = {
       {
         "<leader>am",
@@ -29,7 +30,7 @@ return {
       },
     },
     opts = {
-      model = "claude-3.7-sonnet",
+      model = "claude-sonnet-4.6",
       temperature = 0.5,
     },
   },
